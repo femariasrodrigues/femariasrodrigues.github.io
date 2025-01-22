@@ -1,0 +1,301 @@
+ 
+ 
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden; /* Evitar rolagem horizontal */
+    width: 100%;
+}
+
+/* Barra de navegação */
+header {
+    background-color: #420062;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 1rem;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+}
+
+.menu li a:hover,
+.menu li a:focus {
+    background-color: #220121;
+    outline: 3px solid #f6dff7; 
+}
+
+/* Container centralizado */
+.content-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Seções principais */
+main {
+    width: 100%;
+    background-image: url(universoBackground.jpeg); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+section {
+    margin: 2rem 0;
+}
+.content-box {
+    background-color: rgba(239, 220, 248, 0.9); /* Caixa semi-transparente */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column; /* Para alinhar tudo verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    text-align: left; /* Manter o texto à esquerda dentro da caixa */
+    width: 100%;
+    max-width: 1200px; /* Garante que a caixa não ultrapasse 1200px */
+    margin: 0 auto; /* Centraliza a caixa */
+}
+
+
+
+h2, h3 {
+    font-size: 2.5rem;
+    color: #420062;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Galeria de fotos (carrossel) */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha se necessário */
+    margin-top: 1rem;
+    justify-content: center; /* Centraliza as imagens */
+}
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste a imagem para cobrir o espaço disponível */
+    transition: transform 0.3s ease-in-out;
+}
+
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+    display: none;
+}
+/* Foco das imagens ao usar a tecla Tab */
+.gallery img:focus {
+    outline: 3px solid #420062; /* Destacar o foco */
+    transform: scale(1.05); /* Leve aumento de tamanho para indicar o foco */
+}
+figure {
+    position: relative;
+    width: 250px; /* Tamanho fixo para todas as imagens */
+    height: 250px; /* Altura fixada para manter a proporção consistente */
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+figure:hover figcaption {
+    display: block; /* Mostra a legenda */
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+.content-box {
+width: 90%; /* Ajusta a largura em telas pequenas */
+max-width: none; /* Remove o limite de largura para telas pequenas */
+}
+}
+
+
+.timeline {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+    display: inline-block;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline li {
+    margin-bottom: 1.5rem;
+    background-color: #ffe6f3;
+    padding: 1rem;
+    border-radius: 5px;
+   
+}
+
+
+iframe {
+    max-width: 100%;
+    height: 300px;
+    border: none;
+    margin-top: 1rem;
+}
+
+
+
+footer {
+    background-color: #257180;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: -50px;
+}
+        .modal-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    transform: translateY(-50%);
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#prevBtn {
+    left: 20px;
+}
+
+#nextBtn {
+    right: 20px;
+}
+footer {
+background-color: #420062; /* Cor de fundo do rodapé */
+color: white;
+padding: 2rem 0; /* Espaçamento em cima e embaixo */
+width: 100%;
+text-align: center;
+font-size: 1rem;
+
+}
+
+.footer-content p {
+margin-bottom: 1rem;
+font-size: 1.2rem;
+}
+
+.social-links {
+margin-bottom: 1rem;
+}
+
+.social-links .social-icon {
+margin: 0 0.5rem;
+text-decoration: none;
+}
+
+.social-links .social-icon img {
+width: 30px;
+height: 30px;
+transition: transform 0.3s;
+}
+
+.social-links .social-icon img:hover {
+transform: scale(1.1);
+}
+.footer-links img {
+
+}
+.footer-links a {
+color: white;
+text-decoration: none;
+margin: 0 0.5rem;
+
+
+}
+
+.footer-links a:hover {
+text-decoration: underline;
+}
+
+
